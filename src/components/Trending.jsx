@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { useAxios } from './../hooks/useAxios';
 import { CoinsTrending } from './CoinsTrending';
+import { Skeleton } from './Skeleton';
 
 export const Trending = () => {
     // data = {  data.coins (array with objects)  }
-    const { response } = useAxios('search/trending')
+    const { response, loading } = useAxios('search/trending')
+
+    if (loading) {
+        return (
+            <div className='wrapper-container'>
+                <Skeleton className='h-8 w-32' />
+                <Skeleton className='h-8 w-full mt-2' />
+                <Skeleton className='h-8 w-full mt-2' />
+                <Skeleton className='h-8 w-full mt-2' />
+                <Skeleton className='h-8 w-full mt-2' />
+            </div>
+        )
+    }
 
     return (
         <div className='mt-8'>
