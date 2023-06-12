@@ -7,3 +7,18 @@
     @apply max-w-7xl mx-auto px-2
   }
 }
+
+.dark {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+#navbar {
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+#navbar.fixed {
+  background-color: rgb(31 41 55);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
