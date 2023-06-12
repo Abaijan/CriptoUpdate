@@ -7,8 +7,6 @@ export const Markets = () => {
     const { response } = useAxios(`coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`)
     const [value, setValue] = useState('')
     
-    console.log(response);
-
     const filteredCoins = response?.filter(coin_result => {
         return coin_result.name.toLowerCase().includes(value.toLowerCase())
     })
