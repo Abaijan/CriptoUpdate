@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useAxios } from './../hooks/useAxios';
 import { CoinsTrending } from './CoinsTrending';
 import { Skeleton } from './Skeleton';
-import { Coin } from './Coin';
 
 export const Trending = () => {
     const { response, loading } = useAxios('search/trending')

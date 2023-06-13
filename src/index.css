@@ -9,7 +9,7 @@
 }
 
 .dark {
-  background-color: #1e1e1e;
+  background-color: #121212;
   color: #fff;
 }
 
@@ -19,6 +19,6 @@
 }
 
 #navbar.fixed {
-  background-color: rgb(31 41 55);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #121212;
+  box-shadow: 0 2px 4px #121212;
 }

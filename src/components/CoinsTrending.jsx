@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const CoinsTrending = ({ coin }) => {
+
     return (
         <>
             <div className="font-light mb-2 p-2 border-gray-200 border-2 rounded hover:bg-gray-800 cursor-pointer">
