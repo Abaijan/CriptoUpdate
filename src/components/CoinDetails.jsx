@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useAxios } from '../hooks/useAxios';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { CustomContext } from '../context/Context';
 
 export const CoinDetail = () => {
@@ -18,15 +18,9 @@ export const CoinDetail = () => {
             AddProductToBasket(response);
             setBasketCount(basketCount + 1)
         } else {
-            console.log('Product already in the basket');
+            alert('Product already in the basket');
         }
     };
-
-    // useEffect(() => {
-    //     if (window.onload) {
-    //         localStorage.setItem('basket_product', JSON.stringify(response))
-    //     }
-    // }, [])
 
     if (!response) {
         return (

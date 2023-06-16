@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { ArchiveIcon } from '../icons/Icon';
+import { BasketIcon } from '../icons/Icon';
 import { CustomContext } from '../context/Context';
 
 const Modal = () => {
@@ -20,21 +20,22 @@ const Modal = () => {
                 className="text-white font-bold py-2 rounded"
                 onClick={openModal}
             >
-                <ArchiveIcon />
+                <BasketIcon />
             </button>
 
             {isOpen && (
-                <div className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
-                    <div className="modal-container bg-white w-1/2 mx-auto rounded shadow-lg p-6">
-                        <h2 className="text-xl font-bold mb-4">Модальное окно</h2>
+                <div className="absolute right-40 top-6 h-full overflow-hidden">
+                    <div className="fixed bg-white rounded shadow-lg p-6 h-full w-96 overflow-hidden">
+                        <h2 className="text-xl font-bold mb-4 text-red-800"></h2>
                         <div className="text-black">
                             {basket?.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="flex items-center justify-end w-full gap-3 h-10"
+                                    className="flex items-center justify-start w-full gap-3 h-10"
                                 >
                                     <img src={item.image.small} alt="" />
                                     <span>{item.name}</span>
+                                    <a href={item.links.homepage}>Link</a>
                                 </div>
                             ))}
                         </div>

@@ -13,8 +13,8 @@ export const ContextProvider = ({ children }) => {
         setBasket((previewItem) => [...previewItem, item])
     }
 
-    const AddProductToPortfolio = (coin) => {
-        setPortfolio((productCoin) => [...productCoin, coin])
+    const AddProductToPortfolio = (item) => {
+        setPortfolio((previewItem) => [...previewItem, item])
     }
 
     const value = {

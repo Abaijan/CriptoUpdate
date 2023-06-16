@@ -4,7 +4,6 @@ import { CryptoHome } from './pages/CryptoHome';
 import { CryptoDetails } from './pages/CryptoDetails';
 import { Navbar } from './components/Navbar';
 import { Favorite } from './pages/CryptoFavorite';
-import { ContextProvider } from './context/Context';
 
 export const App = () => {
 
