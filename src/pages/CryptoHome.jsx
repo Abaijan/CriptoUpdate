@@ -5,7 +5,6 @@ import { Markets } from '../components/Markets'
 export const CryptoHome = () => {
     return (
         <div className='wrapper-container'>
-            {/* <Search /> */}
             <Trending />
             <Markets />
         </div>
