@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { StarIcon } from "../icons/Icon";
 
 export const CoinsTrending = ({ coin }) => {
 

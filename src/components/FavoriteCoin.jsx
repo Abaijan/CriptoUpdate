@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { CustomContext } from '../context/Context'
-import { currencyFormat } from '../utils'
 import { ArrowRightIcon, TrendingDown, TrendingUp } from '../icons/Icon'
 import { Link } from 'react-router-dom'
+import dayjs from 'dayjs'
 
 export const FavoriteCoin = () => {
     const { portfolio } = useContext(CustomContext)
@@ -28,10 +28,7 @@ export const FavoriteCoin = () => {
                         </span>
                         <div className='flex items-center gap-5'>
                             <p>
-                                {currencyFormat(item.low_24h)}
-                            </p>
-                            <p>
-                                {item.last_updated}
+                                {dayjs(item.atl_date).format('YYYY_DD_MM')}
                             </p>
                         </div>
                         <Link to={`/coin/${item.id}`}>

@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useAxios } from '../hooks/useAxios';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CustomContext } from '../context/Context';
+import { SuccessIcon } from '../icons/Icon';
 
 export const CoinDetail = () => {
     const { id } = useParams();
     const { response } = useAxios(`coins/${id}?localization=false&tickers=false&market_data=false&community_data=false&sparkline=false`);
+    const [variant, setVariant] = useState('Add to basket')
 
     const { AddProductToBasket, basketCount, setBasketCount, basket } = useContext(CustomContext)
 
@@ -17,6 +19,7 @@ export const CoinDetail = () => {
         if (!productExists) {
             AddProductToBasket(response);
             setBasketCount(basketCount + 1)
+            setVariant(<SuccessIcon />)
         } else {
             alert('Product already in the basket');
         }
@@ -38,7 +41,7 @@ export const CoinDetail = () => {
                     onClick={handleAddToBasket}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 >
-                    Добавить в корзину
+                    {variant === 'Add to basket' ? 'Add to basket' : <SuccessIcon />}
                 </button>
             </div>
             <p className='mt-6 text-gray-500 [&>a]:text-blue-600 [&>a]:underline' dangerouslySetInnerHTML={{ __html: response.description?.en }}></p>
