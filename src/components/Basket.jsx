@@ -14,8 +14,6 @@ const Modal = () => {
         setIsOpen(false);
     };
 
-    console.log(basket);
-
     return (
         <div className="flex items-center justify-center">
             <button

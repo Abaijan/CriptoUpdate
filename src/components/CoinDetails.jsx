@@ -3,6 +3,7 @@ import { useAxios } from '../hooks/useAxios';
 import { useContext, useState } from 'react';
 import { CustomContext } from '../context/Context';
 import { SuccessIcon } from '../icons/Icon';
+import { LiveBackground } from './LiveBackground';
 
 export const CoinDetail = () => {
     const { id } = useParams();
@@ -33,7 +34,7 @@ export const CoinDetail = () => {
     }
 
     return (
-        <div className='my-6'>
+        <div className='my-6 wrap'>
             <div className='flex gap-2 items-center'>
                 <img src={response.image?.small} alt={response.name} />
                 <h1 className='text-2xl mb-2 capitalize font-bold'>{response.name}</h1>
