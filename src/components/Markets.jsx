@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useAxios } from '../hooks/useAxios'
 import { CoinsMarkets } from './CoinsMarkets';
+import { SearchIcon } from '../icons/Icon';
 
 export const Markets = () => {
 
@@ -13,13 +14,14 @@ export const Markets = () => {
 
     return (
         <section className='mt-8'>
-            <form className='wrapper-container' onSubmit={(e) => {
+            <form className='wrapper-container relative  ' onSubmit={(e) => {
                 e.preventDefault()
             }}>
                 <input
                     type="text"
                     className='
-                    w-72 
+                    z-0
+                    w-72
                     h-8 
                     px-4
                     py-2 
@@ -34,6 +36,9 @@ export const Markets = () => {
                 '
                     onChange={(event) => setValue(event.target.value)}
                 />
+                <button className='absolute left-64 top-1'> 
+                    <SearchIcon className="absolute" />
+                </button>
             </form>
             <h1 className='text-2xl mb-2 border-b'>Markets</h1>
             {response && filteredCoins?.map((coin) => {

@@ -4,20 +4,20 @@ export const CoinsTrending = ({ coin }) => {
 
     return (
         <>
-            <div className="font-light mb-2 p-2 border-gray-200 border-2 rounded hover:bg-gray-800 cursor-pointer">
-                <Link to={`/coin/${coin.id}`}>
-                    <div className="flex items-center gap-1">
-                        <p className="font-semibold">{coin.score + 1}.</p>
-                        <picture>
-                            <img
-                                className="w-6"
-                                src={coin.small} alt={coin.name} />
-                        </picture>
-                        <p>{coin.name}</p>
-                        <small className="text-xs">({coin.symbol})</small>
-                    </div>
-                </Link>
-            </div>
-        </>
+                <div className= "relative h-56 w-56 rounded-3xl bg-white-950 drop-shadow-2xl border-2 cursor-pointer">
+                    <Link to={`/coin/${coin.id}`}>
+                        <div className=" items-center gap-1">
+                            <p className="absolute left-24 text-2xl top-40 font-semibold">{coin.score + 1}.</p>
+                            <picture>
+                                <img
+                                    className="w-40 h-40 absolute left-7 top-1"
+                                    src={coin.large} alt={coin.name} />
+                            </picture>
+                            <p className="absolute left-20 top-48 !decoration-white" >{coin.name}</p>
+                            <small className="text-xs decoration-white absolute right-8 bottom-2 ">({coin.symbol})</small>
+                        </div>
+                    </Link>
+                </div>
+            </>
     )
 }

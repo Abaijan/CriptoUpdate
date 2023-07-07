@@ -70,7 +70,8 @@ export const Navbar = () => {
                         }
                         <span className="flex items-center cursor-pointer mt-1">
                             <Link to={`/coin/favorite`}>
-                                <FavoriteICon />
+                                <FavoriteICon 
+                                />
                             </Link>
                             <span className="relative right-2 bottom-3">
                                 {count}

@@ -23,14 +23,17 @@ export const Trending = () => {
             <h1 className='text-2xl mb-2 border-b'>
                 Trending
             </h1>
-            {response && response?.coins?.map((coin) => {
-                return (
-                    <CoinsTrending
-                        key={coin.item.coin_id}
-                        coin={coin.item}
-                    />
-                )
-            })}
+            <div className='flex flex-wrap justify-around gap-x-8 w-10/12 m-auto gap-y-8 '>
+                {response && response?.coins?.map((coin) => {
+                    return (
+                        <CoinsTrending
+                            className=''
+                            key={coin.item.coin_id}
+                            coin={coin.item}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }
