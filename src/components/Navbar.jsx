@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom"
+import { LogoIcon } from "../icons/Icon"
+import Search from "./Search"
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FavoriteICon, LogoIcon, MoonIcon, SunIcon } from "../icons/Icon";
 import { useState, useEffect, useContext } from "react";
@@ -40,6 +43,15 @@ export const Navbar = () => {
     }, [darkMode]);
 
     return (
+        <div className='bg-gray-800 text-white h-14 flex items-center'>
+            <div className='wrapper-container w-full'>
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1 cursor-pointer" onClick={() => navigate('/')}>
+                        <LogoIcon />
+                        <p>
+                            <span className="text-yellow-500">
+                                C
+                            </span>
         <div className={`bg-gray-800 text-white h-14 flex items-center mb-10`} id="navbar">
             <div className="wrapper-container w-full">
                 <div className="flex items-center justify-between">
@@ -50,6 +62,14 @@ export const Navbar = () => {
                                 C
                             </span>
                             rypto
+                            <span className="text-yellow-500">
+                                U
+                            </span>
+                            pdate
+                        </p>
+                    </div>
+                    <Search />
+                </div>
                             <span className="text-yellow-500">
                                 U
                             </span>

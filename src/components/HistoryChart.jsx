@@ -29,7 +29,7 @@ ChartJS.register(
 export const HistoryChart = () => {
     const { id } = useParams();
     const { response } = useAxios(`coins/${id}/market_chart?vs_currency=usd&days=7`);
-
+    // console.log(response);
     if (!response) {
         return (
             <div>Loading...</div>
