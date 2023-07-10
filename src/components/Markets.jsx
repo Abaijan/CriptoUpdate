@@ -17,9 +17,11 @@ export const Markets = () => {
             <form className='wrapper-container relative  ' onSubmit={(e) => {
                 e.preventDefault()
             }}>
+                <h1 className='text-2xl mb-5 border-b'>Markets</h1>
                 <input
                     type="text"
                     className='
+                    mb-5
                     z-0
                     w-72
                     h-8 
@@ -34,13 +36,13 @@ export const Markets = () => {
                     focus:border-blue-500 
                     focus:ring-blue-500
                 '
+                placeholder='Search Coin'
                     onChange={(event) => setValue(event.target.value)}
                 />
-                <button className='absolute left-64 top-1'> 
+                <button className='absolute left-64 top-14'> 
                     <SearchIcon className="absolute" />
                 </button>
             </form>
-            <h1 className='text-2xl mb-2 border-b'>Markets</h1>
             {response && filteredCoins?.map((coin) => {
                 return (
                     <CoinsMarkets
