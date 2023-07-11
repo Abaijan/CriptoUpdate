@@ -1,6 +1,8 @@
-import { useNavigate } from "react-router-dom"
-import { LogoIcon } from "../icons/Icon"
-import Search from "./Search"
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { FavoriteICon, LogoIcon, MoonIcon, SunIcon } from "../icons/Icon";
+import { useState, useEffect, useContext } from "react";
+import { CustomContext } from "../context/Context";
+import Modal from "./Basket";
 
 export const Navbar = () => {
     const navigate = useNavigate('');
@@ -38,8 +40,8 @@ export const Navbar = () => {
     }, [darkMode]);
 
     return (
-        <div className='bg-gray-800 text-white h-14 flex items-center'>
-            <div className='wrapper-container w-full'>
+        <div className={`bg-gray-800 text-white h-14 flex items-center mb-10`} id="navbar">
+            <div className="wrapper-container w-full">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1 cursor-pointer" onClick={() => navigate('/')}>
                         <LogoIcon />
@@ -54,7 +56,31 @@ export const Navbar = () => {
                             pdate
                         </p>
                     </div>
-                    <Search />
+                    <div className="flex items-center gap-2">
+                        {
+                            darkMode ? (
+                                <span onClick={handleThemeToggle} className="w-5 h-5 cursor-pointer">
+                                    <SunIcon />
+                                </span>
+                            ) : (
+                                <span onClick={handleThemeToggle} className="w-5 h-5 cursor-pointer">
+                                    <MoonIcon />
+                                </span>
+                            )
+                        }
+                        <span className="flex items-center cursor-pointer mt-1">
+                            <Link to={`/coin/favorite`}>
+                                <FavoriteICon />
+                            </Link>
+                            <span className="relative right-2 bottom-3">
+                                {count}
+                            </span>
+                            <Modal />
+                            <span className="relative right-2 bottom-3">
+                                {basketCount}
+                            </span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
