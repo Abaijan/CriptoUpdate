@@ -9,6 +9,7 @@ export const ContextProvider = ({ children }) => {
     const [portfolio, setPortfolio] = useState([]);
     const [basket, setBasket] = useState([]);
 
+    
     const AddProductToBasket = (item) => {
         setBasket((previewItem) => [...previewItem, item])
     }
